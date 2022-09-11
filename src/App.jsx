@@ -1,14 +1,18 @@
 import './App.css'
+import Navbar from './assets/components/Navbar'
+import { Convertidor } from './assets/components/Convertidor'
 
 function App() {
   
 
   return (
     <div className="App">
-
-    <h2>hola mamasita</h2>   
+    
+    <Navbar/>
+    <Convertidor/>
    
-    </div>
+   </div>
+   
   )
 }
 
