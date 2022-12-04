@@ -1,8 +1,13 @@
 import React from 'react'
 import "../hojas-de-estilos/Convertidor.css"
 import { useState,useEffect } from 'react'
+import Api from '../../helper/FetchApi'
+
 
 export const Convertidor = () => {
+
+  const dolartoday = Api()
+  console.log(dolartoday)
 
   const estadoInicial = (Number(1.00).toFixed(2))
    
@@ -12,10 +17,9 @@ export const Convertidor = () => {
   const valores = [
    {
     moneda: "usa",
-    valor1:  8.42
+    valor1:  dolartoday
 
    }
-  
   ]
 
   useEffect(() =>{
@@ -29,12 +33,13 @@ export const Convertidor = () => {
     setMonto((e.target.value))
    }
 
-   const reiniciarBT = () => { setMonto(estadoInicial)}
+   const reiniciarBT = () => {setMonto(estadoInicial)}
    
     console.log(`prueba del primer input ${monto}`) 
     console.log(`prueba del segundo input ${resultado}`) 
     console.log(`prueba del segundo input ${(resultado).toLocaleString("es-VE", {style:"currency", currency:"VES"})}`) 
 
+  
   return (
     <>
  <div className="d-flex justify-content-center">
