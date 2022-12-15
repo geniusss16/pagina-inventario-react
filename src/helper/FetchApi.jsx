@@ -1,7 +1,7 @@
 //@ts-chec4
 import { useState, useEffect } from "react";
 
-const Api = () => {
+const FetchApi = () => {
 
 
    const [dolarT, setDolarT] = useState("")
@@ -15,7 +15,7 @@ const Api = () => {
     
     setDolarT(dataJson.USD.dolartoday)
     setDolarBcv(dataJson.USD.promedio_real)
-    console.log(dolarBcv);
+    //console.log(dolarBcv);
   };
 
 
@@ -27,10 +27,10 @@ const Api = () => {
 
  //console.log(dolarT)
 
-  return dolarT
+  return[dolarT , dolarBcv] 
    
 
 
 };
 
-export default Api;
+export default FetchApi;
