@@ -6,12 +6,13 @@ import FetchApi from '../../helper/FetchApi'
 
 
 export const Convertidor = () => {
-
+    
+  
 
    //respuesta que llega del servidor de dolarDoday 
    let respuestaApi = FetchApi() 
    let dolartoday = respuestaApi[0]
-   let dolarBcv   = respuestaApi[1]
+   let dolarBcv   = respuestaApi[1] 
 
 
    
@@ -33,7 +34,8 @@ export const Convertidor = () => {
    
 
    //console.log(valores.valor1)
-
+    
+   
 
    useEffect(() =>{
 
@@ -51,8 +53,9 @@ export const Convertidor = () => {
    function capturavalor1 (e) {  
     setMonto((e.target.value))
    }
-
-   const reiniciarBT = () => {setMonto(estadoInicial)}
+   
+   //boton que reinica el estado  monto y lo cambia a 1.00 con => Number(1.00).toFixed(2)
+   const reiniciarBT = () => {setMonto(Number(1.00).toFixed(2))}
    
     //console.log(`prueba del primer input ${monto}`) 
     //console.log(`prueba del segundo input ${resultado}`) 
@@ -64,13 +67,11 @@ export const Convertidor = () => {
 
     function selector (e) {
 
-      console.log(dolarBcv)
+      let valorActualDelSelector = e.target.value
 
-      let valorDelSelector = e.target.value
-
-      setValorSelector(valorDelSelector)
+      setValorSelector(valorActualDelSelector)
        
-      console.log(`valor del selector  ${valorDelSelector}`)
+      console.log(`valor del selector  ${valorActualDelSelector}`)
 
     }
 
